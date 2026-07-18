@@ -1,0 +1,6 @@
+{
+  "name": "Venite University",
+  "description": "A responsive and modern marketing website for Venite University featuring Home, About, Programmes, and Contact pages with light/dark theme support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

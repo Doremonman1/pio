@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-grotesque: var(--font-grotesque), "Archivo Black", sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", monospace;
+
+  /* Venite University - Bold Brand Palette */
+  --color-void: #0F0A24; /* Deeper, more sophisticated void */
+  --color-void-light: #1A1235; /* Premium card background */
+  --color-veil: #F5F3FF;
+  --color-marigold: #F2A93B;
+  --color-cobalt: #2451C4;
+  --color-crimson: #D63447;
+  --color-dusk: #503E8A; /* Re-tuned elegant border color */
+}
+
+@layer base {
+  :root {
+    --background: #F5F3FF; /* veil */
+    --foreground: #0F0A24; /* void */
+    --border-color: #D3CDE6; /* light elegant border */
+  }
+
+  .dark {
+    --background: #0F0A24; /* void */
+    --foreground: #F5F3FF; /* veil */
+    --border-color: #503E8A; /* dusk */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-200 font-sans;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom sloped/diagonal cuts for full-bleed panel transition rhythm */
+@utility clip-diagonal-top {
+  clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+}
+
+@utility clip-diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
+}
+
+@utility clip-diagonal-both {
+  clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+}
+
+/* Focus indicator style */
+@utility focus-ring {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson;
+}
